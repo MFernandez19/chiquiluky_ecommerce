@@ -36,15 +36,13 @@
 
 
 
-@mixin gradient($deg, $args1, $args2) {
-    background: -webkit-linear-gradient($deg, $args1, $args2);
-    background: -moz-linear-gradient($deg, $args1, $args2);
-    background: -o-linear-gradient($deg, $args1, $args2);
-    background: linear-gradient($deg, $args1, $args2);
+@mixin gradient($args1,$args2){
+    -webkit-linear-gradient:(0deg, $args1, $args2);
+       -moz-linear-gradient:(0deg, $args1, $args2);
+         -o-linear-gradient:(0deg, $args1, $args2);
+           -linear-gradient:(0deg, $args1, $args2);
 }
 
-
-//  fliter mixin
 
 @mixin filter($filter-type,$filter-amount) { 
   -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
@@ -97,22 +95,6 @@
     @keyframes #{$animation-name} {
         @content;
     }
-}
-
-// Placeholder Mixins
-@mixin placeholder {
-  &.placeholder {
-      @content;
-  }
-  &:-moz-placeholder {
-      @content;
-  }
-  &::-moz-placeholder {
-      @content;
-  }
-  &::-webkit-input-placeholder {
-      @content;
-  }
 }
 
 @mixin animation ($args) {
